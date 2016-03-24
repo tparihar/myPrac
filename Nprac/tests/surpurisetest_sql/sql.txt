@@ -1,0 +1,81 @@
+
+
+
+#1. insert into employeedb.department values(6,'Janitorial Services');
+
+
+
+
+#2. update employeedb.employee set dept_Id='1' where fname='Ron' and lname='Smith';
+
+
+
+#3. SELECT A.fname,A.lname,B.dept_name FROM employeedb.employee A left join employeedb.department B
+#on (A.dept_Id=B.dept_Id) where A.lname regexp '^[A-J]';
+
+
+#4. SELECT * FROM employeedb.salary where Salary like '_0%';
+
+
+#5. SELECT A.fname,A.lname,B.dept_name,C.Salary FROM employeedb.employee A left join employeedb.department B
+#on (A.dept_Id=B.dept_Id) join employeedb.salary C on (A.emp_ID=C.emp_ID) where C.Salary between 2005 and 2015;
+
+
+
+#ALTER TABLE employeedb.employee ADD PRIMARY KEY(emp_ID);
+
+
+
+#6. ALTER TABLE employeedb.department ADD PRIMARY KEY(dept_Id);
+
+
+
+
+
+#7. ALTER TABLE employeedb.employee ADD CONSTRAINT fk_dept_Id FOREIGN KEY (dept_Id) REFERENCES employeedb.department(dept_Id);
+
+#SELECT fname,lname FROM employeedb.contractors union all SELECT fname,lname FROM employeedb.employee; 
+
+
+
+#8.SELECT A.emp_id,A.fname,A.lname,C.emp_id,C.Salary FROM employeedb.employee A  join employeedb.salary C on (A.emp_ID=C.emp_ID) order by C.Salary desc limit 1;
+
+
+
+#9. SELECT B. dept_Id,B.dept_name,IFNULL(sum(C.Salary),0) FROM employeedb.department B  left join  employeedb.employee A
+#on (A.dept_Id=B.dept_Id) left join employeedb.salary C on (A.emp_ID=C.emp_ID) group by B. dept_Id,B.dept_name;
+
+
+
+#10. SELECT B. dept_Id,B.dept_name,IFNULL(sum(C.Salary),0) FROM employeedb.department B  left join  employeedb.employee A
+#on (A.dept_Id=B.dept_Id) left join employeedb.salary C on (A.emp_ID=C.emp_ID) group by B. dept_Id,B.dept_name having IFNULL(sum(C.Salary),0)>100000;
+
+
+
+
+ALTER TABLE  employeedb.employee  ADD hiredate Date;
+
+ALTER TABLE  employeedb.contractors  ADD hiredate Date;
+
+
+UPDATE EMPLOYEEDB.EMPLOYEE SET hiredate = '2011-01-15' WHERE emp_id <= 3;
+
+UPDATE EMPLOYEEDB.EMPLOYEE SET hiredate = '2015-12-01' WHERE emp_id > 3;
+
+UPDATE EMPLOYEEDB.CONTRACTORS SET hiredate = '2012-04-01' WHERE cont_ID <= 3;
+
+UPDATE EMPLOYEEDB.CONTRACTORS SET hiredate = '2015-12-01' WHERE cont_ID = 3;
+
+UPDATE EMPLOYEEDB.CONTRACTORS SET hiredate = '2015-12-15' WHERE cont_ID = 5;
+
+UPDATE EMPLOYEEDB.CONTRACTORS SET hiredate = '2016-01-01' WHERE cont_ID = 4;
+
+UPDATE EMPLOYEEDB.CONTRACTORS SET hiredate = '2016-01-20' WHERE cont_ID = 6;
+
+
+
+
+select * from EMPLOYEEDB.employee where hiredate > (curdate() - Interval 7 Day);
+
+
+select * from EMPLOYEEDB.employee where hiredate > (curdate() - Interval 3 Month);

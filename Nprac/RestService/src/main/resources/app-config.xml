@@ -1,0 +1,69 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:cxf="http://cxf.apache.org/core"	
+	xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+	xmlns:cassandra="http://www.springframework.org/schema/data/cassandra"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/cql http://www.springframework.org/schema/cql/spring-cql.xsd
+		http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://cxf.apache.org/core 
+		http://cxf.apache.org/schemas/core.xsd	
+		http://www.springframework.org/schema/data/cassandra 
+		http://www.springframework.org/schema/data/cassandra/spring-cassandra.xsd		
+		http://cxf.apache.org/jaxrs 
+		http://cxf.apache.org/schemas/jaxrs.xsd">
+ 
+
+
+
+<context:component-scan base-package="com.bootcamp.restservice.dao"/>
+
+  <!-- REQUIRED: The Cassandra Cluster -->
+  <cassandra:cluster id="point" contact-points="localhost"    port="9042" />
+
+  <!-- REQUIRED: The Cassandra Session, built from the Cluster, and attaching 
+    to a keyspace -->
+  <cassandra:session id="cassandraSession" cluster-ref="point" keyspace-name="ckreward" />
+
+  <!-- REQUIRED: The Default Cassandra Mapping Context used by CassandraConverter -->
+  <cassandra:mapping />
+
+  <!-- REQUIRED: The Default Cassandra Converter used by CassandraTemplate -->
+  <cassandra:converter />
+
+  <!-- REQUIRED: The Cassandra Template is the building block of all Spring 
+    Data Cassandra -->
+  <cassandra:template id="cqlTemplate" session-ref="cassandraSession"/>
+
+
+
+
+
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+
+	
+
+	<!-- User Service Bean -->
+	<bean id="userImpl" class="com.bootcamp.restservice.service.UserDetailImpl"/>
+
+	
+	
+<!-- Json converter bean definition -->
+<bean id="jsonProvider" class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider" />
+
+<!-- Defining userService rest config -->
+	<jaxrs:server id="userService" address="/user">
+		<jaxrs:providers>
+			<ref bean='jsonProvider' />
+		</jaxrs:providers>
+		<jaxrs:serviceBeans>
+			<ref bean="userImpl" />
+		</jaxrs:serviceBeans>
+	</jaxrs:server>
+
+</beans>

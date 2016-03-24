@@ -1,0 +1,67 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	 
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc 
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/tx 
+    	http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd
+        ">
+
+	<!-- ========================= RESOURCE DEFINITIONS ========================= -->
+
+ 
+	<!-- import the dataSource definition -->
+	<import resource="datasource-config.xml" />
+
+	<!-- property file -->
+	<context:property-placeholder location="classpath:spring/data-access.properties"
+		system-properties-mode="OVERRIDE" />
+
+	<!-- enables scanning for @Transactional annotations -->
+	<tx:annotation-driven />
+
+	<!-- generates session factory bean using hibernate -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="packagesToScan" value="com.ck.reward.entities" />
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+				<prop key="hibernate.show_sql">${hibernate.showSQL}</prop>
+			</props>
+		</property>
+	</bean>
+	
+
+	<!-- transaction manager for session -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<context:annotation-config />
+	
+	<import resource="classpath:META-INF/cxf/cxf.xml"/>
+    <import resource="classpath:META-INF/cxf/cxf-servlet.xml"/>
+ 
+  
+	
+	<!-- import service and dao beans -->
+	<import resource="business-beans.xml" />
+
+
+
+</beans>
+    
+    
+    
+    

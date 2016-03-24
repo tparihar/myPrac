@@ -1,0 +1,67 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:amq="http://activemq.apache.org/schema/core"
+	
+	 
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc 
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://activemq.apache.org/schema/core 
+        http://activemq.apache.org/schema/core/activemq-core.xsd
+        http://www.springframework.org/schema/jms
+		http://www.springframework.org/schema/jms/spring-jms.xsd">
+        
+    <!-- Activemq connection factory -->
+    <bean id="amqConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+        <constructor-arg index="0" value="tcp://localhost:61616"/>
+    </bean>  
+    
+    <!-- ConnectionFactory Definition -->
+    <bean id="connectionFactory" class="org.springframework.jms.connection.CachingConnectionFactory">
+        <constructor-arg ref="amqConnectionFactory" />
+    </bean>
+    
+    
+    <!--  Default Destination Queue Definition-->
+    <bean id="defaultDestination" class="org.apache.activemq.command.ActiveMQQueue">
+        <constructor-arg index="0" value="queue"/>
+    </bean>
+
+    <!-- JmsTemplate Definition -->
+    <bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+        <property name="connectionFactory" ref="connectionFactory" />
+        <property name="defaultDestination" ref="defaultDestination" />
+    </bean>
+
+    <!-- Message Sender Definition -->
+    <bean id="messageSender" class="com.bootcamp.jms.client.MessageSender">
+        <constructor-arg index="0" ref="jmsTemplate" />
+    </bean>
+    
+    
+    
+     
+        
+         <!-- Message Receiver Definition -->
+    <bean id="messageReceiver" class="com.bootcamp.jms.client.MessageReceiver"/>
+    
+
+    <bean class="org.springframework.jms.listener.SimpleMessageListenerContainer">
+        <property name="connectionFactory" ref="connectionFactory" />
+        <property name="destinationName" value="jmstest" />
+        <property name="messageListener" ref="messageReceiver" />
+    </bean>
+    
+<!--     <bean id="jmsContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+    <property name="connectionFactory" ref="connectionFactory" />
+    <property name="destinationName" value="jmstest" />
+    <property name="messageListener" ref="messageReceiver" />
+</bean> -->
+    
+ </beans>

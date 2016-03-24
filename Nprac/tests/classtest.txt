@@ -1,0 +1,9 @@
+Test duration : 45min.
+
+Problem:
+For a given a string like  "inventory:45,assembly:104, supply:203, manufacturing:305” 
+You should have two arrays where one array will have  string elements like inventory, assembly,  supply,  etc...
+and second array will have 45,104, 203  etc... and throw an error if the two parameters have different lengths
+
+Thanks,
+Santosh

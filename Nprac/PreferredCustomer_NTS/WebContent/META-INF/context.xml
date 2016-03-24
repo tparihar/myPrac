@@ -1,0 +1,28 @@
+<Context>
+
+	<Resource name="jdbc/ck"
+	    type="javax.sql.DataSource"
+		maxActive="10"
+   		maxIdle="5"
+   		maxWait="10000"
+        factory="org.apache.tomcat.jdbc.pool.DataSourceFactory" username="root"
+		password="root" driverClassName="com.mysql.jdbc.Driver" 
+		url="jdbc:mysql://localhost:3306/ck" 
+		/>
+
+</Context>
+
+ 
+<!--  <Context>
+
+	<Resource name="jdbc/ck"
+	    type="javax.sql.DataSource"
+		maxActive="10"
+   		maxIdle="5"
+   		maxWait="10000"
+        factory="org.apache.tomcat.jdbc.pool.DataSourceFactory" username="ck"
+		password="ck" driverClassName="oracle.jdbc.OracleDriver" 
+		url="jdbc:oracle:thin:@127.0.0.1:1521:orcl1" 
+		/>
+
+</Context> -->

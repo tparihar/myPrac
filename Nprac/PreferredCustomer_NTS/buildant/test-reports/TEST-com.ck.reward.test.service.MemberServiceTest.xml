@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" hostname="BootcampUser03" name="com.ck.reward.test.service.MemberServiceTest" skipped="0" tests="4" time="0.013" timestamp="2016-02-05T23:37:52">
+  <properties>
+    <property name="java.vendor" value="Oracle Corporation" />
+    <property name="sun.java.launcher" value="SUN_STANDARD" />
+    <property name="eclipse.pdebuild.templates" value="/C:/bootcamp/tools/eclipse/plugins/org.eclipse.pde.build_3.9.100.v20150521-1524/templates/" />
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+    <property name="os.name" value="Windows 10" />
+    <property name="ant.file.type.PrefferedCustomer_NT" value="file" />
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jre1.8.0_66\lib\resources.jar;C:\Program Files\Java\jre1.8.0_66\lib\rt.jar;C:\Program Files\Java\jre1.8.0_66\lib\jsse.jar;C:\Program Files\Java\jre1.8.0_66\lib\jce.jar;C:\Program Files\Java\jre1.8.0_66\lib\charsets.jar;C:\Program Files\Java\jre1.8.0_66\lib\jfr.jar;C:\Program Files\Java\jre1.8.0_66\lib\ext\access-bridge-64.jar;C:\Program Files\Java\jre1.8.0_66\lib\ext\cldrdata.jar;C:\Program Files\Java\jre1.8.0_66\lib\ext\dnsns.jar;C:\Program Files\Java\jre1.8.0_66\lib\ext\jaccess.jar;C:\Program Files\Java\jre1.8.0_66\lib\ext\jfxrt.jar;C:\Program Files\Java\jre1.8.0_66\lib\ext\localedata.jar;C:\Program Files\Java\jre1.8.0_66\lib\ext\nashorn.jar;C:\Program Files\Java\jre1.8.0_66\lib\ext\sunec.jar;C:\Program Files\Java\jre1.8.0_66\lib\ext\sunjce_provider.jar;C:\Program Files\Java\jre1.8.0_66\lib\ext\sunmscapi.jar;C:\Program Files\Java\jre1.8.0_66\lib\ext\sunpkcs11.jar;C:\Program Files\Java\jre1.8.0_66\lib\ext\zipfs.jar" />
+    <property name="TODAY" value="February 5 2016" />
+    <property name="sun.desktop" value="windows" />
+    <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+    <property name="ant.home" value="C:\bootcamp\tools\eclipse\plugins\org.apache.ant_1.9.4.v201504302020" />
+    <property name="java.runtime.version" value="1.8.0_66-b18" />
+    <property name="user.name" value="Bootcamp User 03" />
+    <property name="user.language" value="en" />
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_65\jre\bin" />
+    <property name="ant.project.default-target" value="dist" />
+    <property name="ant.project.name" value="PrefferedCustomer_NT" />
+    <property name="DSTAMP" value="20160205" />
+    <property name="java.version" value="1.8.0_66" />
+    <property name="user.timezone" value="" />
+    <property name="sun.arch.data.model" value="64" />
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_65\jre\lib\endorsed" />
+    <property name="sun.cpu.isalist" value="amd64" />
+    <property name="sun.jnu.encoding" value="Cp1252" />
+    <property name="file.encoding.pkg" value="sun.io" />
+    <property name="file.separator" value="\" />
+    <property name="java.specification.name" value="Java Platform API Specification" />
+    <property name="java.class.version" value="52.0" />
+    <property name="user.country" value="US" />
+    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_65\jre" />
+    <property name="java.vm.info" value="mixed mode" />
+    <property name="ant.file" value="C:\bootcamp\development\workspace\PreferredCustomer_NTS\build.xml" />
+    <property name="os.version" value="10.0" />
+    <property name="path.separator" value=";" />
+    <property name="java.vm.version" value="25.65-b01" />
+    <property name="user.variant" value="" />
+    <property name="ant.library.dir" value="C:\bootcamp\tools\eclipse\plugins\org.apache.ant_1.9.4.v201504302020\lib" />
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob" />
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
+    <property name="user.script" value="" />
+    <property name="eclipse.pdebuild.scripts" value="/C:/bootcamp/tools/eclipse/plugins/org.eclipse.pde.build_3.9.100.v20150521-1524/scripts/" />
+    <property name="user.home" value="C:\Users\Bootcamp User 03" />
+    <property name="java.specification.vendor" value="Oracle Corporation" />
+    <property name="java.library.path" value="C:\bootcamp\tools\eclipse;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Program Files/Java/jre1.8.0_66/bin/server;C:/Program Files/Java/jre1.8.0_66/bin;C:/Program Files/Java/jre1.8.0_66/lib/amd64;D:\app\root\product\12.1.0\dbhome_1\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\TortoiseSVN\bin;C:\Program Files\VisualSVN Server\bin;C:\Program Files\SlikSvn\bin;C:\bootcamp\tools\gradle-2.10-all\gradle-2.10\bin;C:\bootcamp\tools\apache-maven-3.3.9\bin;C:\Program Files\Java\jdk1.8.0_65\bin;C:\bootcamp\tools\ant\bin;C:\bootcamp\tools\eclipse;;.;C:\bootcamp\tools\eclipse\configuration\org.eclipse.osgi\751\0\.cp" />
+    <property name="java.vendor.url" value="http://java.oracle.com/" />
+    <property name="java.vm.vendor" value="Oracle Corporation" />
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+    <property name="sun.java.command" value="org.eclipse.ant.internal.launching.remote.InternalAntRunner -Dorg.eclipse.ant.core.ANT_PROCESS_ID=1454715469455 -Declipse.connect.port=53707 -Declipse.pdebuild.home=/C:/bootcamp/tools/eclipse/plugins/org.eclipse.pde.build_3.9.100.v20150521-1524/./ -Declipse.pdebuild.scripts=/C:/bootcamp/tools/eclipse/plugins/org.eclipse.pde.build_3.9.100.v20150521-1524/scripts/ -Declipse.pdebuild.templates=/C:/bootcamp/tools/eclipse/plugins/org.eclipse.pde.build_3.9.100.v20150521-1524/templates/ -Dant.home=C:\bootcamp\tools\eclipse\plugins\org.apache.ant_1.9.4.v201504302020 -logger org.eclipse.ant.internal.launching.remote.logger.RemoteAntBuildLogger -inputhandler org.eclipse.ant.internal.ui.antsupport.inputhandler.ProxyInputHandler -buildfile C:\bootcamp\development\workspace\PreferredCustomer_NTS\build.xml" />
+    <property name="java.class.path" value="C:\bootcamp\tools\eclipse\plugins\org.apache.ant_1.9.4.v201504302020\lib\ant-antlr.jar;C:\bootcamp\tools\eclipse\plugins\org.apache.ant_1.9.4.v201504302020\lib\ant-apache-bcel.jar;C:\bootcamp\tools\eclipse\plugins\org.apache.ant_1.9.4.v201504302020\lib\ant-apache-bsf.jar;C:\bootcamp\tools\eclipse\plugins\org.apache.ant_1.9.4.v201504302020\lib\ant-apache-log4j.jar;C:\bootcamp\tools\eclipse\plugins\org.apache.ant_1.9.4.v201504302020\lib\ant-apache-oro.jar;C:\bootcamp\tools\eclipse\plugins\org.apache.ant_1.9.4.v201504302020\lib\ant-apache-regexp.jar;C:\bootcamp\tools\eclipse\plugins\org.apache.ant_1.9.4.v201504302020\lib\ant-apache-resolver.jar;C:\bootcamp\tools\eclipse\plugins\org.apache.ant_1.9.4.v201504302020\lib\ant-apache-xalan2.jar;C:\bootcamp\tools\eclipse\plugins\org.apache.ant_1.9.4.v201504302020\lib\ant-commons-logging.jar;C:\bootcamp\tools\eclipse\plugins\org.apache.ant_1.9.4.v201504302020\lib\ant-commons-net.jar;C:\bootcamp\tools\eclipse\plugins\org.apache.ant_1.9.4.v201504302020\lib\ant-jai.jar;C:\bootcamp\tools\eclipse\plugins\org.apache.ant_1.9.4.v201504302020\lib\ant-javamail.jar;C:\bootcamp\tools\eclipse\plugins\org.apache.ant_1.9.4.v201504302020\lib\ant-jdepend.jar;C:\bootcamp\tools\eclipse\plugins\org.apache.ant_1.9.4.v201504302020\lib\ant-jmf.jar;C:\bootcamp\tools\eclipse\plugins\org.apache.ant_1.9.4.v201504302020\lib\ant-jsch.jar;C:\bootcamp\tools\eclipse\plugins\org.apache.ant_1.9.4.v201504302020\lib\ant-junit.jar;C:\bootcamp\tools\eclipse\plugins\org.apache.ant_1.9.4.v201504302020\lib\ant-junit4.jar;C:\bootcamp\tools\eclipse\plugins\org.apache.ant_1.9.4.v201504302020\lib\ant-launcher.jar;C:\bootcamp\tools\eclipse\plugins\org.apache.ant_1.9.4.v201504302020\lib\ant-netrexx.jar;C:\bootcamp\tools\eclipse\plugins\org.apache.ant_1.9.4.v201504302020\lib\ant-swing.jar;C:\bootcamp\tools\eclipse\plugins\org.apache.ant_1.9.4.v201504302020\lib\ant-testutil.jar;C:\bootcamp\tools\eclipse\plugins\org.apache.ant_1.9.4.v201504302020\lib\ant.jar;C:\bootcamp\tools\eclipse\configuration\org.eclipse.osgi\79\0\.cp\lib\antdebug.jar;C:\bootcamp\tools\eclipse\configuration\org.eclipse.osgi\79\0\.cp\lib\remote.jar;C:\bootcamp\tools\eclipse\configuration\org.eclipse.osgi\80\0\.cp\lib\remoteAnt.jar;C:\Program Files\Java\jdk1.8.0_65\lib\tools.jar;C:\bootcamp\tools\eclipse\plugins\org.eclipse.swt.win32.win32.x86_64_3.104.1.v20150825-0743.jar" />
+    <property name="ant.version" value="Apache Ant(TM) version 1.9.4 compiled on April 29 2014" />
+    <property name="timestamp" value="2016-02-05_05-37" />
+    <property name="TSTAMP" value="1737" />
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+    <property name="java.vm.specification.version" value="1.8" />
+    <property name="sun.cpu.endian" value="little" />
+    <property name="sun.os.patch.level" value="" />
+    <property name="eclipse.pdebuild.home" value="/C:/bootcamp/tools/eclipse/plugins/org.eclipse.pde.build_3.9.100.v20150521-1524/./" />
+    <property name="java.io.tmpdir" value="C:\Users\BOOTCA~1\AppData\Local\Temp\" />
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/" />
+    <property name="ant.file.PrefferedCustomer_NT" value="C:\bootcamp\development\workspace\PreferredCustomer_NTS\build.xml" />
+    <property name="os.arch" value="amd64" />
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment" />
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_65\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext" />
+    <property name="user.dir" value="C:\bootcamp\development\workspace\PreferredCustomer_NTS" />
+    <property name="line.separator" value="&#xd;&#xa;" />
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
+    <property name="basedir" value="C:\bootcamp\development\workspace\PreferredCustomer_NTS" />
+    <property name="ant.java.version" value="1.8" />
+    <property name="ant.core.lib" value="C:\bootcamp\tools\eclipse\plugins\org.apache.ant_1.9.4.v201504302020\lib\ant.jar" />
+    <property name="file.encoding" value="UTF-8" />
+    <property name="java.specification.version" value="1.8" />
+    <property name="ant.project.invoked-targets" value="dist" />
+  </properties>
+  <testcase classname="com.ck.reward.test.service.MemberServiceTest" name="testGetMemberWithValidAccountId" time="0.002" />
+  <testcase classname="com.ck.reward.test.service.MemberServiceTest" name="testGetMemberNonExistentAccountId" time="0.0" />
+  <testcase classname="com.ck.reward.test.service.MemberServiceTest" name="testGetIncomeRange" time="0.001" />
+  <testcase classname="com.ck.reward.test.service.MemberServiceTest" name="testGetMemberNullAccountId" time="0.0" />
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

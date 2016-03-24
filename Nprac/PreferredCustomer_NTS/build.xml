@@ -1,0 +1,68 @@
+<?xml version="1.0" ?>
+<project name="PrefferedCustomer_NT" default="dist">
+
+	<path id="compile.classpath">
+		<fileset dir="WebContent/WEB-INF/lib">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+	<path id="test-classpath">
+		<path refid="compile.classpath" />
+		<pathelement location="buildant/classes" />
+		<pathelement location="buildant/test-classes" />
+	</path>
+
+
+
+	<target name="clean">
+		<delete dir="dist" />
+		<delete dir="buildant" />
+	</target>
+
+	<target name="compile">
+		<mkdir dir="buildant/classes" />
+		<javac destdir="buildant/classes" debug="true" srcdir="src/main">
+			<classpath refid="compile.classpath" />
+		</javac>
+	</target>
+
+
+
+	<target name="test-compile" depends="compile">
+		<mkdir dir="buildant/test-classes" />
+		<javac destdir="buildant/test-classes">
+			<src path="src/test" />
+
+			<classpath refid="test-classpath" />
+		</javac>
+	</target>
+
+	<target name="test" depends="test-compile">
+		<mkdir dir="buildant/test-reports" />
+		<junit haltonfailure="no" printsummary="yes">
+			<classpath refid="test-classpath" />
+			<formatter type="brief" usefile="false" />
+			<formatter type="xml" />
+			<batchtest todir="buildant/test-reports" failureproperty="test.failed" errorproperty="failed">
+				<fileset dir="buildant/test-classes" includes="**/*Test.class" />
+			</batchtest>
+		</junit>
+		<fail message="Test failure detected, check test results. " if="test.failed" />
+	</target>
+
+	<tstamp>
+		<format property="timestamp" pattern="yyyy-MM-dd_hh-mm" />
+	</tstamp>
+
+	<target name="dist" depends="clean, compile, test">
+		<mkdir dir="dist" />
+		<war destfile="dist/${ant.project.name}.war" basedir="WebContent" excludes="**/junit*,**/mock*">
+			<classes dir="buildant/classes" />
+		</war>
+
+	</target>
+
+
+
+</project>
