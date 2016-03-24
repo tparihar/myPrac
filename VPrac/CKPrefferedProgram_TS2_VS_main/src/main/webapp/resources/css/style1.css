@@ -1,0 +1,48 @@
+@CHARSET "ISO-8859-1";
+
+.header {
+	width: 1200px;
+	margin: 0 auto 0 auto;
+	padding: 5px;
+	border: 2px solid #cccccc;
+	background: #ffffff;
+}
+
+.headerlinks {
+	font-size: 150%;
+	color: #ffffff;
+	text-align: left;
+}
+
+.footer {
+	width: 1200px;
+	height: 40px;
+	margin: 0 auto 0 auto;
+	padding: 5px;
+	border: 2px solid #cccccc;
+	background: #ffffff;
+	font-size: 100%;
+}
+
+a {
+	color: black;
+	
+}
+
+.logo {
+	float: left;
+}
+
+#headerlogin {
+	font-size: 350%;
+	text-align: right;
+}
+#layout1{
+	width: 1100px;
+	height: 300px;
+	margin: 0 auto 0 auto;
+	padding: 15px;
+	background: #ffffff;
+	font-size: 100%;
+
+}

@@ -1,0 +1,144 @@
+@CHARSET "ISO-8859-1";
+
+div {
+	padding: 10px;
+	font: 15px arial, sans-serif;
+	font-size: 70%;
+}
+
+#prefer {
+	font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
+	font-weight: 900;
+}
+
+#box {
+	padding: 10px;
+	border: 1px solid grey;
+}
+
+#sploffer {
+	color: grey;
+}
+
+.layout {
+	width: 1200px;
+	height: 800px;
+	margin: 0 auto 0 auto;
+	padding: 5px;
+	border: 2px solid #cccccc;
+	background: #ffffff;
+	font-size: 150%;
+}
+
+.joinlayout {
+	width: 1200px;
+	height: 1800px;
+	margin: 0 auto 0 auto;
+	padding: 5px;
+	border: 2px solid #cccccc;
+	background: #ffffff;
+	font-size: 150%;
+}
+
+#account {
+	padding: 5px;
+	font-family: arial, sans-serif;
+	font-weight: bold;
+}
+
+#login {
+	width: 1050px;
+	height: 300px;
+	margin: 0 auto 0 auto;
+	padding: 10px;
+	border: 2px solid #cccccc;
+	background: #ffffff;
+	font-size: 70%;
+}
+
+#loginpre {
+	font-family: arial, sans-serif;
+	font-size: 100%;
+	text-align: center
+}
+
+#joinpre {
+	font-family: arial, sans-serif;
+	font-size: 120%;
+	text-align: center
+}
+
+#getstartedgrid {
+	width: 1050px;
+	height: 300px;
+	margin: 0 auto 0 auto;
+	padding: 15px;
+	border: 2px solid #cccccc;
+	background: #ffffff;
+	font-size: 120%;
+}
+
+#aboutgrid {
+	width: 1100px;
+	height: 300px;
+	margin: 0 auto 0 auto;
+	padding: 15px;
+	background: #ffffff;
+	font-size: 75%;
+}
+
+#join {
+	width: 1050px;
+	height: 200px;
+	margin: 0 auto 0 auto;
+	padding: 10px;
+	border: 2px solid #cccccc;
+	background: #ffffff;
+	font-size: 70%;
+}
+
+#personaljoin {
+	width: 1050px;
+	height: 1050px;
+	margin: 0 auto 0 auto;
+	padding: 10px;
+	border: 2px solid #cccccc;
+	background: #ffffff;
+	font-size: 100%;
+}
+
+select {
+	width: 200px;
+	height: 25px;
+}
+
+#store {
+	width: 600px;
+	height: 25px
+}
+
+input {
+	width: 200px;
+	height: 25px;
+}
+
+#radio {
+	width: 50px;
+	height: 20px;
+}
+#layout1{
+	width: 1100px;
+	height: 300px;
+	margin: 0 auto 0 auto;
+	padding: 15px;
+	background: #ffffff;
+	font-size: 150%;
+
+}
+pre{
+	overflow:auto;
+	width:500;
+}
+#success{
+	font-size: 100%;
+}

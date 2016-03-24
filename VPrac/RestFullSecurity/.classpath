@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/bootcamp/jar/Jersey/aopalliance-repackaged-2.4.0-b34.jar"/>
+	<classpathentry kind="lib" path="C:/bootcamp/jar/Jersey/asm-debug-all-5.0.4.jar"/>
+	<classpathentry kind="lib" path="C:/bootcamp/jar/Jersey/hk2-api-2.4.0-b34.jar"/>
+	<classpathentry kind="lib" path="C:/bootcamp/jar/Jersey/hk2-locator-2.4.0-b34.jar"/>
+	<classpathentry kind="lib" path="C:/bootcamp/jar/Jersey/hk2-utils-2.4.0-b34.jar"/>
+	<classpathentry kind="lib" path="C:/bootcamp/jar/Jersey/javassist-3.18.1-GA.jar"/>
+	<classpathentry kind="lib" path="C:/bootcamp/jar/Jersey/javax.annotation-api-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/bootcamp/jar/Jersey/javax.inject-2.4.0-b34.jar"/>
+	<classpathentry kind="lib" path="C:/bootcamp/jar/Jersey/javax.servlet-api-3.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/bootcamp/jar/Jersey/javax.ws.rs-api-2.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/bootcamp/jar/Jersey/jaxb-api-2.2.7.jar"/>
+	<classpathentry kind="lib" path="C:/bootcamp/jar/Jersey/jersey-client.jar"/>
+	<classpathentry kind="lib" path="C:/bootcamp/jar/Jersey/jersey-common.jar"/>
+	<classpathentry kind="lib" path="C:/bootcamp/jar/Jersey/jersey-container-servlet.jar"/>
+	<classpathentry kind="lib" path="C:/bootcamp/jar/Jersey/jersey-container-servlet-core.jar"/>
+	<classpathentry kind="lib" path="C:/bootcamp/jar/Jersey/jersey-guava-2.22.2.jar"/>
+	<classpathentry kind="lib" path="C:/bootcamp/jar/Jersey/jersey-media-jaxb.jar"/>
+	<classpathentry kind="lib" path="C:/bootcamp/jar/Jersey/jersey-server.jar"/>
+	<classpathentry kind="lib" path="C:/bootcamp/jar/Jersey/org.osgi.core-4.2.0.jar"/>
+	<classpathentry kind="lib" path="C:/bootcamp/jar/Jersey/osgi-resource-locator-1.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/bootcamp/jar/Jersey/persistence-api-1.0.jar"/>
+	<classpathentry kind="lib" path="C:/bootcamp/jar/Jersey/validation-api-1.1.0.Final.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>

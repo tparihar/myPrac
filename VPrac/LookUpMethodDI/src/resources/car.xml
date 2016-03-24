@@ -1,0 +1,20 @@
+	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+			"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+			<beans>
+			
+			<!-- <bean id="car" class="beans.Car" >
+			<lookup-method name="drive" bean="myCar"/>
+			</bean> -->
+			
+			<bean id="myCar" class="beans.MyCar" >
+			<property name="myCar" value="tataengine"></property>
+			</bean>
+			
+			<bean id="hello" class="beans.Hello" >
+			<lookup-method name="truckEngine" bean="myCar1"/>
+			</bean>
+			
+			<bean id="myCar1" class="beans.MyCar" >
+			<property name="myCar" value="audiengine"></property>
+			</bean>
+			</beans>

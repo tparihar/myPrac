@@ -1,0 +1,164 @@
+<project name="CKPreferredProgram_VS" default="createwarfile">
+
+	<property name="src.dir" value="src/main" />
+	<property name="web.dir" value="WebContent" />
+	<property name="build.dir" value="${web.dir}/WEB-INF/classes" />
+
+	<path id="master-classpath">
+		<fileset dir="${web.dir}/WEB-INF/lib">
+			<include name="*.jar" />
+		</fileset>
+		<pathelement path="${build.dir}" />
+	</path>
+
+	<path id="test-classpath">
+		<fileset dir="${web.dir}/WEB-INF/lib">
+			<include name="*.jar" />
+		</fileset>
+		<path refid="master-classpath" />
+		<pathelement location="ant/main" />
+		<pathelement location="ant/test" />
+	</path>
+
+	<target name="compile" depends="clean">
+
+		<mkdir dir="ant/main" />
+		<mkdir dir="ant/test" />
+
+		<javac srcdir="src/main" destdir="ant/main" includeantruntime="false">
+			<classpath refid="master-classpath" />
+		</javac>
+
+	</target>
+
+	<target name="compiletest" depends="compile">
+
+		<javac srcdir="src/test" destdir="ant/test" includeantruntime="false">
+
+
+			<classpath>
+				<path refid="test-classpath" />
+				<pathelement location="src/main" />
+				<pathelement location="ant/main" />
+			</classpath>
+
+		</javac>
+
+	</target>
+
+
+	<target name="test" depends="compiletest">
+		<mkdir dir="ant/test-reports" />
+		<junit haltonfailure="no" printsummary="on">
+			<classpath refid="test-classpath" />
+			<formatter type="xml" />
+			<batchtest todir="ant/test-reports" failureproperty="test.failed" errorproperty="failed">
+				<fileset dir="ant/test" includes="**/Test*.class" />
+			</batchtest>
+
+			<formatter type="plain" usefile="false" />
+		</junit>
+		<fail message="Test failure detected, check test results. " if="test.failed" />
+	</target>
+
+	<target name="copy" depends="test">
+
+		<copy todir="ant">
+			<fileset dir="WebContent">
+
+			</fileset>
+		</copy>
+
+	</target>
+
+	<target name="clean">
+
+		<delete includeemptydirs="true" failonerror="false">
+			<fileset dir="CKPreferredProgram_VS1" />
+			<fileset dir="CKPreferredProgram_VS_war" />
+			<fileset dir="ant" />
+		</delete>
+
+	</target>
+
+
+	<target name="build" depends="copy">
+
+		<mkdir dir="CKPreferredProgram_VS1/WEB-INF/classes/main">
+
+		</mkdir>
+
+		<mkdir dir="CKPreferredProgram_VS1/WEB-INF/lib">
+
+		</mkdir>
+
+		<copy todir="CKPreferredProgram_VS1/WEB-INF/classes/main">
+			<fileset dir="ant/main">
+				<patternset id="non.test.sources">
+					<exclude name="**/*Test*" />
+				</patternset>
+			</fileset>
+		</copy>
+
+		<copy todir="CKPreferredProgram_VS1/WEB-INF/lib">
+			<fileset dir="ant/WEB-INF/lib">
+				<patternset id="non.test.sources">
+					<exclude name="**/*Test*" />
+				</patternset>
+			</fileset>
+		</copy>
+		<copy todir="CKPreferredProgram_VS1/WEB-INF">
+			<fileset dir="ant/WEB-INF">
+				<patternset id="non.test.sources">
+					<exclude name="*.jar" />
+				</patternset>
+			</fileset>
+		</copy>
+
+
+		<mkdir dir="CKPreferredProgram_VS1">
+		</mkdir>
+
+		<copy todir="CKPreferredProgram_VS1/jsp">
+			<fileset dir="ant/jsp" />
+		</copy>
+
+
+		<copy todir="CKPreferredProgram_VS1/html">
+			<fileset dir="ant/html" />
+		</copy>
+
+
+		<copy todir="CKPreferredProgram_VS1/images">
+			<fileset dir="ant/images" />
+		</copy>
+
+
+		<copy todir="CKPreferredProgram_VS1/css">
+			<fileset dir="ant/css" />
+		</copy>
+
+
+		<copy todir="CKPreferredProgram_VS1">
+			<fileset dir="ant">
+				<include name="*.jsp" />
+			</fileset>
+		</copy>
+
+	</target>
+
+	<target name="createwarfile" depends="build">
+
+		<war destfile="dist/CKPreferredProgram_VS.war">
+			<fileset dir="CKPreferredProgram_VS1" />
+		</war>
+
+		<delete includeemptydirs="true">
+			<fileset dir="ant" />
+		</delete>
+		<delete includeemptydirs="true">
+			<fileset dir="CKPreferredProgram_VS1" />
+		</delete>
+
+	</target>
+</project>

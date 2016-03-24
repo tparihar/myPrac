@@ -1,0 +1,17 @@
+	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+			"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+	<bean
+		class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+		<property name="staticMethod" value="beans.DemoFactory.setCar" />
+		<property name="arguments">
+			<list>
+				<value>beans.Audi</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="demoFactory" class="beans.DemoFactory" factory-method="getCar">
+
+	</bean>
+</beans>
