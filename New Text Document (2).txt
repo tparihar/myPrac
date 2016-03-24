@@ -1,0 +1,77 @@
+
+import static org.mockito.Matchers.anyString;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+
+import com.calvinklein.rewards.dao.StoreDAO;
+import com.calvinklein.rewards.model.Store;
+
+public class StoreHandlerTest {
+
+	@Mock
+	StoreDAO mockStoreDao;
+	@InjectMocks
+	StoreHandler storeHandler;
+
+	private Store store1;
+	/*
+	 * Store store = new Store();
+	 * 
+	 * HashMap<String, String> expected = new HashMap<String, String>();
+	 * 
+	 * List<Store> list = new ArrayList<>();
+	 */
+
+	// creating store object
+	@Before
+	public void setUp() throws Exception {
+		MockitoAnnotations.initMocks(this);
+
+		/*
+		 * store.setSname("katy mills"); store.setAdrline1(
+		 * "5000 katy mills circle"); store.setAdrline2("Suite 358");
+		 * store.setCity("katy"); store.setSid("SID00144");
+		 * store.setStateid("SID00144"); list.add(store);
+		 */
+	}
+
+	@Test
+	public void testGetStoreListById() {
+
+		store1 = new Store();
+		store1.setSname("katy mills");
+		store1.setAdrline1("5000 katy mills circle");
+		store1.setAdrline2("Suite 358");
+		store1.setCity("katy");
+		store1.setSid("SID00144");
+		store1.setStateid("SID00144");
+
+		ArrayList<Store> list1 = new ArrayList<>();
+		list1.add(store1);
+
+		HashMap<String, String> strLists = new HashMap<String, String>();
+		
+		for (Store str : list1) {
+			String value = str.getSname() + " " + str.getAdrline1() + " " + str.getAdrline2() + " " + str.getCity();
+			strLists.put(str.getSid(), value);
+		}
+
+		// mocking Dao class call
+		when(mockStoreDao.getStores("dg")).thenReturn((list1));
+
+		Assert.assertEquals(strLists, storeHandler.getStores("hj"));
+
+	}
+
+}

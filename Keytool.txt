@@ -1,0 +1,6 @@
+youtube shoaib khan
+----------------------
+keytool -genkeypair -alias mycertificate -keyalg RSA -keystore "d://..."
+tomcat--- org.apache.coyote.http11.Http11NioProtocol
+-Djavax.net.ssl.trustStore=d://
+-Djavax.net.ssl.trustStprePassword=d://
